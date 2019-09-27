@@ -7,29 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242929E3233E011A0056E938 /* GameScene_Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929E2233E011A0056E938 /* GameScene_Physics.swift */; };
+		242929E4233E011A0056E938 /* GameScene_Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929E2233E011A0056E938 /* GameScene_Physics.swift */; };
+		242929E6233E02A80056E938 /* FlipperStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929E5233E02A80056E938 /* FlipperStop.swift */; };
+		242929E7233E02A80056E938 /* FlipperStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929E5233E02A80056E938 /* FlipperStop.swift */; };
+		242929EF233E07D20056E938 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929EE233E07D20056E938 /* Ball.swift */; };
+		242929F0233E07D20056E938 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929EE233E07D20056E938 /* Ball.swift */; };
+		242929F3233E0F4C0056E938 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242929F2233E0F4C0056E938 /* GameController.framework */; };
+		242929F5233E0F750056E938 /* GameScene_GameControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929F4233E0F750056E938 /* GameScene_GameControllers.swift */; };
+		242929F6233E0F750056E938 /* GameScene_GameControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242929F4233E0F750056E938 /* GameScene_GameControllers.swift */; };
 		2432057C233DD9580058DC04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2432057B233DD9580058DC04 /* AppDelegate.swift */; };
-		2432057E233DD9580058DC04 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2432057D233DD9580058DC04 /* GameScene.sks */; };
-		24320580233DD9580058DC04 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2432057F233DD9580058DC04 /* Actions.sks */; };
+		2432057E233DD9580058DC04 /* GameSceneTV.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2432057D233DD9580058DC04 /* GameSceneTV.sks */; };
 		24320582233DD9580058DC04 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24320581233DD9580058DC04 /* GameScene.swift */; };
 		24320584233DD9580058DC04 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24320583233DD9580058DC04 /* GameViewController.swift */; };
 		24320587233DD9580058DC04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24320585233DD9580058DC04 /* Main.storyboard */; };
-		24320589233DD9590058DC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24320588233DD9590058DC04 /* Assets.xcassets */; };
+		24320597233DD98B0058DC04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24320596233DD98B0058DC04 /* AppDelegate.swift */; };
+		243205A2233DD98B0058DC04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243205A0233DD98B0058DC04 /* Main.storyboard */; };
+		243205A4233DD98B0058DC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243205A3233DD98B0058DC04 /* Assets.xcassets */; };
+		243205A7233DD98B0058DC04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243205A5233DD98B0058DC04 /* LaunchScreen.storyboard */; };
+		243205AD233DDA760058DC04 /* GameScenePhone.sks in Resources */ = {isa = PBXBuildFile; fileRef = 243205AC233DDA760058DC04 /* GameScenePhone.sks */; };
+		243205B0233DDAE30058DC04 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24320581233DD9580058DC04 /* GameScene.swift */; };
+		243205B1233DDAEB0058DC04 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24320583233DD9580058DC04 /* GameViewController.swift */; };
+		243205B5233DE0BE0058DC04 /* GameScene_Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243205B4233DE0BE0058DC04 /* GameScene_Touches.swift */; };
+		243205B6233DE0BE0058DC04 /* GameScene_Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243205B4233DE0BE0058DC04 /* GameScene_Touches.swift */; };
+		243205CE233DEDFB0058DC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243205CD233DEDFB0058DC04 /* Assets.xcassets */; };
+		243205CF233DEDFB0058DC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243205CD233DEDFB0058DC04 /* Assets.xcassets */; };
+		243205D1233DF1DA0058DC04 /* Flipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243205D0233DF1DA0058DC04 /* Flipper.swift */; };
+		243205D2233DF1DA0058DC04 /* Flipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243205D0233DF1DA0058DC04 /* Flipper.swift */; };
+		24D7BB8A233E1BA400C86525 /* GameScenePad.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24D7BB89233E1BA400C86525 /* GameScenePad.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242929E2233E011A0056E938 /* GameScene_Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene_Physics.swift; path = ../GameScene_Physics.swift; sourceTree = "<group>"; };
+		242929E5233E02A80056E938 /* FlipperStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipperStop.swift; sourceTree = "<group>"; };
+		242929EE233E07D20056E938 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		242929F2233E0F4C0056E938 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		242929F4233E0F750056E938 /* GameScene_GameControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene_GameControllers.swift; sourceTree = "<group>"; };
 		24320578233DD9580058DC04 /* PinballTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinballTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2432057B233DD9580058DC04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2432057D233DD9580058DC04 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		2432057F233DD9580058DC04 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		2432057D233DD9580058DC04 /* GameSceneTV.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSceneTV.sks; sourceTree = "<group>"; };
 		24320581233DD9580058DC04 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		24320583233DD9580058DC04 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		24320586233DD9580058DC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		24320588233DD9590058DC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2432058A233DD9590058DC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24320594233DD98B0058DC04 /* PinballiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinballiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24320596233DD98B0058DC04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		243205A1233DD98B0058DC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		243205A3233DD98B0058DC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		243205A6233DD98B0058DC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		243205A8233DD98B0058DC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		243205AC233DDA760058DC04 /* GameScenePhone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePhone.sks; sourceTree = "<group>"; };
+		243205B4233DE0BE0058DC04 /* GameScene_Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene_Touches.swift; sourceTree = "<group>"; };
+		243205CD233DEDFB0058DC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		243205D0233DF1DA0058DC04 /* Flipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flipper.swift; sourceTree = "<group>"; };
+		24D7BB89233E1BA400C86525 /* GameScenePad.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePad.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		24320575233DD9580058DC04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				242929F3233E0F4C0056E938 /* GameController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24320591233DD98B0058DC04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,11 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242929F1233E0F4C0056E938 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				242929F2233E0F4C0056E938 /* GameController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2432056F233DD9580058DC04 = {
 			isa = PBXGroup;
 			children = (
 				2432057A233DD9580058DC04 /* PinballTV */,
+				243205D3233DF2090058DC04 /* TableClasses */,
+				24320595233DD98B0058DC04 /* PinballiOS */,
 				24320579233DD9580058DC04 /* Products */,
+				242929F1233E0F4C0056E938 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				24320578233DD9580058DC04 /* PinballTV.app */,
+				24320594233DD98B0058DC04 /* PinballiOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,15 +114,41 @@
 			isa = PBXGroup;
 			children = (
 				2432057B233DD9580058DC04 /* AppDelegate.swift */,
-				2432057D233DD9580058DC04 /* GameScene.sks */,
-				2432057F233DD9580058DC04 /* Actions.sks */,
+				2432057D233DD9580058DC04 /* GameSceneTV.sks */,
+				242929E2233E011A0056E938 /* GameScene_Physics.swift */,
 				24320581233DD9580058DC04 /* GameScene.swift */,
+				243205B4233DE0BE0058DC04 /* GameScene_Touches.swift */,
+				242929F4233E0F750056E938 /* GameScene_GameControllers.swift */,
 				24320583233DD9580058DC04 /* GameViewController.swift */,
 				24320585233DD9580058DC04 /* Main.storyboard */,
-				24320588233DD9590058DC04 /* Assets.xcassets */,
+				243205CD233DEDFB0058DC04 /* Assets.xcassets */,
 				2432058A233DD9590058DC04 /* Info.plist */,
 			);
 			path = PinballTV;
+			sourceTree = "<group>";
+		};
+		24320595233DD98B0058DC04 /* PinballiOS */ = {
+			isa = PBXGroup;
+			children = (
+				24320596233DD98B0058DC04 /* AppDelegate.swift */,
+				243205AC233DDA760058DC04 /* GameScenePhone.sks */,
+				24D7BB89233E1BA400C86525 /* GameScenePad.sks */,
+				243205A0233DD98B0058DC04 /* Main.storyboard */,
+				243205A3233DD98B0058DC04 /* Assets.xcassets */,
+				243205A5233DD98B0058DC04 /* LaunchScreen.storyboard */,
+				243205A8233DD98B0058DC04 /* Info.plist */,
+			);
+			path = PinballiOS;
+			sourceTree = "<group>";
+		};
+		243205D3233DF2090058DC04 /* TableClasses */ = {
+			isa = PBXGroup;
+			children = (
+				243205D0233DF1DA0058DC04 /* Flipper.swift */,
+				242929E5233E02A80056E938 /* FlipperStop.swift */,
+				242929EE233E07D20056E938 /* Ball.swift */,
+			);
+			path = TableClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +171,23 @@
 			productReference = 24320578233DD9580058DC04 /* PinballTV.app */;
 			productType = "com.apple.product-type.application";
 		};
+		24320593233DD98B0058DC04 /* PinballiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 243205A9233DD98B0058DC04 /* Build configuration list for PBXNativeTarget "PinballiOS" */;
+			buildPhases = (
+				24320590233DD98B0058DC04 /* Sources */,
+				24320591233DD98B0058DC04 /* Frameworks */,
+				24320592233DD98B0058DC04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinballiOS;
+			productName = PinballiOS;
+			productReference = 24320594233DD98B0058DC04 /* PinballiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +199,14 @@
 				ORGANIZATIONNAME = "Dian \"Charles\" Qi";
 				TargetAttributes = {
 					24320577233DD9580058DC04 = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.GameControllers.appletvos = {
+								enabled = 1;
+							};
+						};
+					};
+					24320593233DD98B0058DC04 = {
 						CreatedOnToolsVersion = 10.3;
 					};
 				};
@@ -119,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				24320577233DD9580058DC04 /* PinballTV */,
+				24320593233DD98B0058DC04 /* PinballiOS */,
 			);
 		};
 /* End PBXProject section */
@@ -129,9 +236,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				24320587233DD9580058DC04 /* Main.storyboard in Resources */,
-				2432057E233DD9580058DC04 /* GameScene.sks in Resources */,
-				24320589233DD9590058DC04 /* Assets.xcassets in Resources */,
-				24320580233DD9580058DC04 /* Actions.sks in Resources */,
+				2432057E233DD9580058DC04 /* GameSceneTV.sks in Resources */,
+				243205CE233DEDFB0058DC04 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24320592233DD98B0058DC04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				243205A2233DD98B0058DC04 /* Main.storyboard in Resources */,
+				243205AD233DDA760058DC04 /* GameScenePhone.sks in Resources */,
+				243205A4233DD98B0058DC04 /* Assets.xcassets in Resources */,
+				243205A7233DD98B0058DC04 /* LaunchScreen.storyboard in Resources */,
+				24D7BB8A233E1BA400C86525 /* GameScenePad.sks in Resources */,
+				243205CF233DEDFB0058DC04 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,9 +261,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242929EF233E07D20056E938 /* Ball.swift in Sources */,
+				242929E3233E011A0056E938 /* GameScene_Physics.swift in Sources */,
+				243205B5233DE0BE0058DC04 /* GameScene_Touches.swift in Sources */,
+				242929F5233E0F750056E938 /* GameScene_GameControllers.swift in Sources */,
 				24320582233DD9580058DC04 /* GameScene.swift in Sources */,
 				24320584233DD9580058DC04 /* GameViewController.swift in Sources */,
+				243205D1233DF1DA0058DC04 /* Flipper.swift in Sources */,
 				2432057C233DD9580058DC04 /* AppDelegate.swift in Sources */,
+				242929E6233E02A80056E938 /* FlipperStop.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24320590233DD98B0058DC04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				242929F0233E07D20056E938 /* Ball.swift in Sources */,
+				242929E4233E011A0056E938 /* GameScene_Physics.swift in Sources */,
+				243205B6233DE0BE0058DC04 /* GameScene_Touches.swift in Sources */,
+				242929F6233E0F750056E938 /* GameScene_GameControllers.swift in Sources */,
+				243205B1233DDAEB0058DC04 /* GameViewController.swift in Sources */,
+				243205B0233DDAE30058DC04 /* GameScene.swift in Sources */,
+				243205D2233DF1DA0058DC04 /* Flipper.swift in Sources */,
+				24320597233DD98B0058DC04 /* AppDelegate.swift in Sources */,
+				242929E7233E02A80056E938 /* FlipperStop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +298,22 @@
 				24320586233DD9580058DC04 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		243205A0233DD98B0058DC04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				243205A1233DD98B0058DC04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		243205A5233DD98B0058DC04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				243205A6233DD98B0058DC04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -314,6 +471,48 @@
 			};
 			name = Release;
 		};
+		243205AA233DD98B0058DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FYKM8X2423;
+				INFOPLIST_FILE = PinballiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ucsd.PinballiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		243205AB233DD98B0058DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FYKM8X2423;
+				INFOPLIST_FILE = PinballiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ucsd.PinballiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +530,15 @@
 			buildConfigurations = (
 				2432058E233DD9590058DC04 /* Debug */,
 				2432058F233DD9590058DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		243205A9233DD98B0058DC04 /* Build configuration list for PBXNativeTarget "PinballiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				243205AA233DD98B0058DC04 /* Debug */,
+				243205AB233DD98B0058DC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,81 +9,132 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+enum BodyType:UInt32 {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    case flipper = 1
+    case ball = 2
+    case bumper = 4
+    case flipperStop = 8
+}
+
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var sceneWidth:CGFloat = 0
+    var sceneHeight:CGFloat = 0
+    var playerIndex1InUse:Bool = false
+    
+    var mainBall:Ball = Ball()
+    
+    #if os(tvOS)
+    
+    let tapLeft = UITapGestureRecognizer()
+    let tapRight = UITapGestureRecognizer()
+    
+    #endif
+    
+    #if os(iOS)
+    
+    #endif
     
     override func didMove(to view: SKView) {
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        physicsWorld.contactDelegate = self
         
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
+        sceneWidth = self.frame.width
+        sceneHeight = self.frame.height
+
+        print(sceneWidth)
+        print(sceneHeight)
         
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
-    }
-    
-    
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
+        #if os(tvOS)
+        tapLeft.addTarget(self, action: #selector(tappedLeft) )
+        tapLeft.allowedPressTypes = [NSNumber (value: UIPress.PressType.leftArrow.rawValue)]
+        self.view!.addGestureRecognizer(tapLeft)
         
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        tapRight.addTarget(self, action: #selector(tappedRight) )
+        tapRight.allowedPressTypes = [NSNumber (value: UIPress.PressType.rightArrow.rawValue)]
+        self.view!.addGestureRecognizer(tapRight)
+        #endif
+        
+        setUpChildren()
+        
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+    func setUpChildren() {
+        for node in self.children {
+            if let flipper:Flipper = node as? Flipper {
+                flipper.setUp()
+            }
+            else if let flipperStoper:FlipperStop = node as? FlipperStop {
+                flipperStoper.setUp()
+            }
+            else if let someBall:Ball = node as? Ball {
+                someBall.setUp()
+                
+                if (someBall.name == "MainBall") {
+                    mainBall = someBall
+                }
+            }
+        }
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        for node in self.children {
+            if let someFlipper:Flipper = node as? Flipper {
+                someFlipper.update()
+            } else if let ball:Ball = node as? Ball {
+                
+                for childNode in ball.children {
+                    childNode.zRotation = -ball.zRotation
+                }
+            }
+        }
+        
+        if (mainBall.position.y < 0) {
+            
+            mainBall.position = CGPoint(x: 720, y: 1079)
+            mainBall.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        }
+    }
+    
+    @objc func tappedLeft() {
+        for node in self.children {
+            if ( node.name == "FlipperLeft" ) {
+                if let flipper:Flipper = node as? Flipper {
+                    flipper.flip()
+                }
+            }
+        }
+    }
+    
+    @objc func tappedRight() {
+        for node in self.children {
+            if ( node.name == "FlipperRight" ) {
+                if let flipper:Flipper = node as? Flipper {
+                    flipper.flip()
+                }
+            }
+        }
+    }
+    
+    @objc func letGoLeft() {
+        for node in self.children {
+            if ( node.name == "FlipperLeft" ) {
+                if let flipper:Flipper = node as? Flipper {
+                    flipper.lower()
+                }
+            }
+        }
+    }
+    
+    @objc func letGoRight() {
+        for node in self.children {
+            if ( node.name == "FlipperRight" ) {
+                if let flipper:Flipper = node as? Flipper {
+                    flipper.lower()
+                }
+            }
+        }
     }
 }
