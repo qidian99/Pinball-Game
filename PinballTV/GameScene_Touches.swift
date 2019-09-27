@@ -13,10 +13,15 @@ extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
-            if ( location.x < sceneWidth / 2) {
+//            if ( location.x < sceneWidth / 2) {
+            if ( location.x < 0 ) {
                 tappedLeft()
             } else {
-                tappedRight()
+                if ( location.y > 0 ) {
+                    tappedUpperRight()
+                } else {
+                    tappedRight()
+                }
             }
         }
     }
@@ -24,10 +29,14 @@ extension GameScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
-            if ( location.x < sceneWidth / 2) {
+            if ( location.x < 0 ) {
                 letGoLeft()
             } else {
-                letGoRight()
+                if ( location.y > 0 ) {
+                    letGoUpperRight()
+                } else {
+                    letGoRight()
+                }
             }
         }
     }

@@ -91,9 +91,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if (mainBall.position.y < 0) {
+        if (mainBall.position.y < -sceneHeight / 2) {
             
-            mainBall.position = CGPoint(x: 720, y: 1079)
+            mainBall.position = CGPoint(x: 130, y: 555)
             mainBall.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         }
     }
@@ -118,6 +118,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    @objc func tappedUpperRight() {
+        for node in self.children {
+            if ( node.name == "FlipperUpperRight" ) {
+                if let flipper:Flipper = node as? Flipper {
+                    flipper.flip()
+                }
+            }
+        }
+    }
+    
     @objc func letGoLeft() {
         for node in self.children {
             if ( node.name == "FlipperLeft" ) {
@@ -131,6 +141,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     @objc func letGoRight() {
         for node in self.children {
             if ( node.name == "FlipperRight" ) {
+                if let flipper:Flipper = node as? Flipper {
+                    flipper.lower()
+                }
+            }
+        }
+    }
+    
+    @objc func letGoUpperRight() {
+        for node in self.children {
+            if ( node.name == "FlipperUpperRight" ) {
                 if let flipper:Flipper = node as? Flipper {
                     flipper.lower()
                 }

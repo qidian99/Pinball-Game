@@ -25,12 +25,16 @@ class Flipper:SKSpriteNode {
         self.physicsBody?.usesPreciseCollisionDetection = true
         
         if ( self.name == "FlipperRight" ) {
-            upperRotation = -30
-            lowerRotation = 30
+            upperRotation = -25
+            lowerRotation = 25
             self.zRotation = degreesToRadians(degrees: lowerRotation)
         } else if ( self.name == "FlipperLeft" ) {
-            upperRotation = 30
-            lowerRotation = -30
+            upperRotation = 25
+            lowerRotation = -25
+            self.zRotation = degreesToRadians(degrees: lowerRotation)
+        } else if ( self.name == "FlipperUpperRight" ) {
+            upperRotation = -25
+            lowerRotation = 25
             self.zRotation = degreesToRadians(degrees: lowerRotation)
         }
     }

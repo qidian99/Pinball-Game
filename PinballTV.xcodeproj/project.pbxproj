@@ -23,7 +23,7 @@
 		243205A2233DD98B0058DC04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243205A0233DD98B0058DC04 /* Main.storyboard */; };
 		243205A4233DD98B0058DC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243205A3233DD98B0058DC04 /* Assets.xcassets */; };
 		243205A7233DD98B0058DC04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243205A5233DD98B0058DC04 /* LaunchScreen.storyboard */; };
-		243205AD233DDA760058DC04 /* GameScenePhone.sks in Resources */ = {isa = PBXBuildFile; fileRef = 243205AC233DDA760058DC04 /* GameScenePhone.sks */; };
+		243205AD233DDA760058DC04 /* GameScenePhone2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 243205AC233DDA760058DC04 /* GameScenePhone2.sks */; };
 		243205B0233DDAE30058DC04 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24320581233DD9580058DC04 /* GameScene.swift */; };
 		243205B1233DDAEB0058DC04 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24320583233DD9580058DC04 /* GameViewController.swift */; };
 		243205B5233DE0BE0058DC04 /* GameScene_Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243205B4233DE0BE0058DC04 /* GameScene_Touches.swift */; };
@@ -38,6 +38,7 @@
 		24D7BB8F233E1D9100C86525 /* GameScene_Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D7BB8D233E1D9100C86525 /* GameScene_Physics.swift */; };
 		24D7BB91233E202C00C86525 /* GameScenePhone.old.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24D7BB90233E202C00C86525 /* GameScenePhone.old.sks */; };
 		24D7BB92233E202C00C86525 /* GameScenePhone.old.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24D7BB90233E202C00C86525 /* GameScenePhone.old.sks */; };
+		24D7BB94233E20D500C86525 /* GameScenePhone.sks in Resources */ = {isa = PBXBuildFile; fileRef = 24D7BB93233E20D500C86525 /* GameScenePhone.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +59,7 @@
 		243205A3233DD98B0058DC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		243205A6233DD98B0058DC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		243205A8233DD98B0058DC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		243205AC233DDA760058DC04 /* GameScenePhone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePhone.sks; sourceTree = "<group>"; };
+		243205AC233DDA760058DC04 /* GameScenePhone2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePhone2.sks; sourceTree = "<group>"; };
 		243205B4233DE0BE0058DC04 /* GameScene_Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene_Touches.swift; sourceTree = "<group>"; };
 		243205CD233DEDFB0058DC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		243205D0233DF1DA0058DC04 /* Flipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flipper.swift; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		24D7BB8B233E1D0000C86525 /* GameSceneTV.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameSceneTV.sks; sourceTree = "<group>"; };
 		24D7BB8D233E1D9100C86525 /* GameScene_Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene_Physics.swift; sourceTree = "<group>"; };
 		24D7BB90233E202C00C86525 /* GameScenePhone.old.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePhone.old.sks; sourceTree = "<group>"; };
+		24D7BB93233E20D500C86525 /* GameScenePhone.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScenePhone.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +123,10 @@
 				2432057B233DD9580058DC04 /* AppDelegate.swift */,
 				24D7BB8B233E1D0000C86525 /* GameSceneTV.sks */,
 				2432057D233DD9580058DC04 /* GameSceneTV.old.sks */,
-				24D7BB8D233E1D9100C86525 /* GameScene_Physics.swift */,
 				24320581233DD9580058DC04 /* GameScene.swift */,
 				243205B4233DE0BE0058DC04 /* GameScene_Touches.swift */,
 				242929F4233E0F750056E938 /* GameScene_GameControllers.swift */,
+				24D7BB8D233E1D9100C86525 /* GameScene_Physics.swift */,
 				24320583233DD9580058DC04 /* GameViewController.swift */,
 				24320585233DD9580058DC04 /* Main.storyboard */,
 				243205CD233DEDFB0058DC04 /* Assets.xcassets */,
@@ -136,8 +138,9 @@
 		24320595233DD98B0058DC04 /* PinballiOS */ = {
 			isa = PBXGroup;
 			children = (
+				24D7BB93233E20D500C86525 /* GameScenePhone.sks */,
 				24320596233DD98B0058DC04 /* AppDelegate.swift */,
-				243205AC233DDA760058DC04 /* GameScenePhone.sks */,
+				243205AC233DDA760058DC04 /* GameScenePhone2.sks */,
 				24D7BB90233E202C00C86525 /* GameScenePhone.old.sks */,
 				24D7BB89233E1BA400C86525 /* GameScenePad.sks */,
 				243205A0233DD98B0058DC04 /* Main.storyboard */,
@@ -254,12 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				243205A2233DD98B0058DC04 /* Main.storyboard in Resources */,
-				243205AD233DDA760058DC04 /* GameScenePhone.sks in Resources */,
+				243205AD233DDA760058DC04 /* GameScenePhone2.sks in Resources */,
 				243205A4233DD98B0058DC04 /* Assets.xcassets in Resources */,
 				243205A7233DD98B0058DC04 /* LaunchScreen.storyboard in Resources */,
 				24D7BB92233E202C00C86525 /* GameScenePhone.old.sks in Resources */,
 				24D7BB8A233E1BA400C86525 /* GameScenePad.sks in Resources */,
 				243205CF233DEDFB0058DC04 /* Assets.xcassets in Resources */,
+				24D7BB94233E20D500C86525 /* GameScenePhone.sks in Resources */,
 				24D7BB8C233E1D0000C86525 /* GameSceneTV.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
