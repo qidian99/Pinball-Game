@@ -17,11 +17,8 @@ extension GameScene {
             if ( location.x < 0 ) {
                 tappedLeft()
             } else {
-                if ( location.y > 0 ) {
-                    tappedUpperRight()
-                } else {
-                    tappedRight()
-                }
+                tappedUpperRight()
+                tappedRight()
             }
         }
     }
@@ -32,11 +29,8 @@ extension GameScene {
             if ( location.x < 0 ) {
                 letGoLeft()
             } else {
-                if ( location.y > 0 ) {
-                    letGoUpperRight()
-                } else {
-                    letGoRight()
-                }
+                letGoUpperRight()
+                letGoRight()
             }
         }
     }

@@ -92,9 +92,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if (mainBall.position.y < -sceneHeight / 2) {
-            
-            mainBall.position = CGPoint(x: 130, y: 555)
-            mainBall.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            mainBall.CheckIfResetBall()
+    
+//            mainBall.position = CGPoint(x: 130, y: 555)
+//            mainBall.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         }
     }
     

@@ -15,6 +15,6 @@ class FlipperStop:SKSpriteNode {
         self.physicsBody?.categoryBitMask = BodyType.flipperStop.rawValue
         self.physicsBody?.collisionBitMask = BodyType.flipper.rawValue
         self.physicsBody?.contactTestBitMask = BodyType.flipper.rawValue
-        self.physicsBody?.usesPreciseCollisionDetection = true
+//        self.physicsBody?.usesPreciseCollisionDetection = true
     }
 }
