@@ -9,12 +9,12 @@
 import Foundation
 import SpriteKit
 
-class FlipperStop:SKSpriteNode {
+class Ball:SKSpriteNode {
     
     func setUp() {
-        self.physicsBody?.categoryBitMask = BodyType.flipperStop.rawValue
-        self.physicsBody?.collisionBitMask = BodyType.flipper.rawValue
-        self.physicsBody?.contactTestBitMask = BodyType.flipper.rawValue
+        self.physicsBody?.categoryBitMask = BodyType.ball.rawValue
+        self.physicsBody?.collisionBitMask = BodyType.flipper.rawValue | BodyType.ball.rawValue
+        self.physicsBody?.contactTestBitMask = BodyType.flipper.rawValue | BodyType.ball.rawValue
         self.physicsBody?.usesPreciseCollisionDetection = true
     }
 }
