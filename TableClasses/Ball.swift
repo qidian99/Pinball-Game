@@ -16,8 +16,10 @@ class Ball:SKSpriteNode {
     
     func setUp() {
         self.physicsBody?.categoryBitMask = BodyType.ball.rawValue
-        self.physicsBody?.collisionBitMask = BodyType.flipper.rawValue | BodyType.ball.rawValue
-        self.physicsBody?.contactTestBitMask = BodyType.flipper.rawValue | BodyType.ball.rawValue
+        self.physicsBody?.contactTestBitMask = BodyType.flipper.rawValue | BodyType.ball.rawValue |
+            BodyType.bumper.rawValue | BodyType.arrow.rawValue
+        self.physicsBody?.collisionBitMask = BodyType.flipper.rawValue | BodyType.ball.rawValue |
+            BodyType.bumper.rawValue
         self.physicsBody?.usesPreciseCollisionDetection = true
         ResetBall()
     }

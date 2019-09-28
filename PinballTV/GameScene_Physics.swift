@@ -19,6 +19,45 @@ extension GameScene {
                 someFlipper.lockFlipper()
             }
         }
+        
+        if ( contact.bodyA.categoryBitMask == BodyType.ball.rawValue && contact.bodyB.categoryBitMask == BodyType.bumper.rawValue ) {
+            if let bumper:Bumper = contact.bodyB.node as? Bumper {
+                bumper.Collided()
+                
+                // Plays the bumper collision sound.
+                soundsPlayer?.PlayBumper();
+                
+                // Updates the game score.
+                GameScore.instance.AddScore(scoreToAdd: bumper.PointsToGive);
+                scoreLabel?.text = "Score: \(GameScore.instance.Score)";
+                
+            }
+        } else if ( contact.bodyB.categoryBitMask == BodyType.ball.rawValue && contact.bodyA.categoryBitMask == BodyType.bumper.rawValue ) {
+            if let bumper:Bumper = contact.bodyA.node as? Bumper {
+                bumper.Collided()
+                
+                // Plays the bumper collision sound.
+                soundsPlayer?.PlayBumper();
+                
+                // Updates the game score.
+                GameScore.instance.AddScore(scoreToAdd: bumper.PointsToGive);
+                scoreLabel?.text = "Score: \(GameScore.instance.Score)";
+            }
+        }
+        
+        if ( contact.bodyA.categoryBitMask == BodyType.ball.rawValue && contact.bodyB.categoryBitMask == BodyType.arrow.rawValue ) {
+            if let arrow:Arrows = contact.bodyB.node as? Arrows {
+                if let ball:Ball = contact.bodyA.node as? Ball {
+                    arrow.Collided(ball: ball)
+                }
+            }
+        } else if ( contact.bodyB.categoryBitMask == BodyType.ball.rawValue && contact.bodyA.categoryBitMask == BodyType.arrow.rawValue ) {
+            if let arrow:Arrows = contact.bodyA.node as? Arrows {
+                if let ball:Ball = contact.bodyB.node as? Ball {
+                    arrow.Collided(ball: ball)
+                }
+            }
+        }
     }
     
     

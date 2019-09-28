@@ -13,8 +13,9 @@ enum BodyType:UInt32 {
     
     case flipper = 1
     case ball = 2
-    case bumper = 4
-    case flipperStop = 8
+    case flipperStop = 4
+    case bumper = 8
+    case arrow = 16
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -32,9 +33,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     #endif
     
-    #if os(iOS)
+    //==============================================================
+    // Private Variables
+    //==============================================================
     
-    #endif
+    private var lastUpdateTime : TimeInterval = 0
+    
+    // UI
+    internal var scoreLabel : SKLabelNode?
+    internal var livesLable : SKLabelNode?
+    
+    // Sprite nodes
+    private var ballNode : Ball?
+    private var ballSpawnPointNode : SKNode?
+    
+    private var leftFlipper : Flipper?
+    private var rightFlipper : Flipper?
+    private var rightFlipper2 : Flipper?
+    
+    private var arrows : Arrows?
+    
+    // Audio
+    private var musicPlayer: MusicPlayer?
+    internal var soundsPlayer: SoundsPlayer?
+    
     
     override func didMove(to view: SKView) {
         
@@ -58,6 +80,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         setUpChildren()
         
+        musicPlayer = MusicPlayer(scene: self, fileNamed: "BackgroundMusic.mp3");
+        musicPlayer!.Play();
+        
+        soundsPlayer = SoundsPlayer(scene: self);
+        
+    }
+    
+    private func FindUINodes()
+    {
+        self.scoreLabel = self.childNode(withName: "Score Label") as? SKLabelNode
+        self.livesLable = self.childNode(withName: "Lives Label") as? SKLabelNode
+        
+        self.livesLable?.text = "Lives: \(GameScore.instance.Lives)"
     }
     
     func setUpChildren() {
@@ -75,7 +110,54 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     mainBall = someBall
                 }
             }
+//            else if let bumperB:BumperB = node as? BumperB {
+//                bumperB.setUp()
+//            }
+//            else if let bumper:Bumper = node as? Bumper {
+//                bumper.setUp()
+//            }
+//            else if let arrow:Arrows = node as? Arrows {
+//                arrow.setUp()
+//            }
+
+            
+            let forceToApply: CGVector = CGVector(dx: 0, dy: 1000)
+            self.arrows = childNode(withName: "Stage/Arrows") as? Arrows
+            self.arrows?.setUp(forceToApply: forceToApply, timePerFrame: 0.8)
+            
+            let bumperA = childNode(withName: "Stage/Bumpers/Bumper A") as? Bumper
+            let bumperB = childNode(withName: "Stage/Bumpers/Bumper B") as? Bumper
+            let bumperC = childNode(withName: "Stage/Bumpers/Bumper C") as? Bumper
+            let bumperD = childNode(withName: "Stage/Bumpers/Bumper D") as? Bumper
+            bumperA!.setUp(pointsToGive: 10)
+            bumperB!.setUp(pointsToGive: 10)
+            bumperC!.setUp(pointsToGive: 10)
+            bumperD!.setUp(pointsToGive: 10)
+            
+            let bumper2A = childNode(withName: "Stage/Bumpers/Bumper 2A") as? BumperB
+            let bumper2B = childNode(withName: "Stage/Bumpers/Bumper 2B") as? BumperB
+            bumper2A!.setUp(pointsToGive: 15)
+            bumper2B!.setUp(pointsToGive: 15)
+            
+            let light0 = childNode(withName: "Stage/Lights/Light0") as? Light
+            let light1 = childNode(withName: "Stage/Lights/Light1") as? Light
+            let light2 = childNode(withName: "Stage/Lights/Light2") as? Light
+            let light3 = childNode(withName: "Stage/Lights/Light3") as? Light
+            let light4 = childNode(withName: "Stage/Lights/Light4") as? Light
+            let light5 = childNode(withName: "Stage/Lights/Light5") as? Light
+            let light6 = childNode(withName: "Stage/Lights/Light6") as? Light
+            let light7 = childNode(withName: "Stage/Lights/Light7") as? Light
+            
+            light0?.setUp()
+            light1?.setUp()
+            light2?.setUp()
+            light3?.setUp()
+            light4?.setUp()
+            light5?.setUp()
+            light6?.setUp()
+            light7?.setUp()
         }
+        FindUINodes()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -92,11 +174,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if (mainBall.position.y < -sceneHeight / 2) {
-            mainBall.CheckIfResetBall()
-    
-//            mainBall.position = CGPoint(x: 130, y: 555)
-//            mainBall.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            _ = mainBall.CheckIfResetBall()
+            GameScore.instance.TakeLife();
+            self.livesLable!.text = "Lives: \(GameScore.instance.Lives)"
+            
+            soundsPlayer?.PlayGate();
         }
+        
+        if(GameScore.instance.Lives <= 0)
+        {
+            ChangeToGameOverScene();
+        }
+    }
+    
+    private func ChangeToGameOverScene()
+    {
+        soundsPlayer!.PlayGameOver();
+        
+        let lossScene = EndScene(size: self.size);
+        lossScene.scaleMode=scaleMode;
+        
+        let transition = SKTransition.doorsCloseHorizontal(withDuration: 1);
+        self.view?.presentScene(lossScene,transition:transition)
     }
     
     @objc func tappedLeft() {
